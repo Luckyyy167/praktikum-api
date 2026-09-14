@@ -6,5 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
+    protected $flillable = [
+        'user_id',
+        'title',
+        'content',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     //
 }
