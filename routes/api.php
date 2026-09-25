@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Item;
+use App\Models\Dosen;
+use App\Http\Controllers\Api\DosenController;
+
+Route::apiResource('dosen', DosenController::class);
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -113,3 +117,7 @@ Route::delete('/item/{id}', function ($id) {
         'message' => 'Barang berhasil dihapus dari sistem gudang'
     ], 200);
 });
+
+
+
+
